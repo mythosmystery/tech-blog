@@ -6,7 +6,6 @@ router.get('/', async (req, res) => {
    const posts = postData.map((post) => post.get({ plain: true }));
    res.render('homepage', {
       logged_in: true,
-      //posts: [{ title: 'Post 1', body: 'Test post', user: { name: 'Test User' } }],
       posts: posts,
    });
 });
