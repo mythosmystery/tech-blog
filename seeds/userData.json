@@ -1,11 +1,15 @@
 [
    {
-      "name": "Test",
+      "first_name": "Test",
+      "last_name": "Testerson",
+      "username": "testT",
       "email": "test@test.net",
       "password": "password"
    },
    {
-      "name": "Jim",
+      "first_name": "Jim",
+      "last_name": "Lahey",
+      "username": "liqourman",
       "email": "jim@test.net",
       "password": "password123"
    }
