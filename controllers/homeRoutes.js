@@ -1,10 +1,13 @@
-//const { User, Post } = require('../../models');
-//const withAuth = require("../../utils/auth");
+const { User, Post, Comment } = require('../models');
+const withAuth = require('../utils/auth');
 const router = require('express').Router();
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+   const postData = await Post.findAll({ include: User });
+   const posts = postData.map((post) => post.get({ plain: true }));
    res.render('homepage', {
       logged_in: true,
-      posts: [{ title: 'Post 1', body: 'Test post', user: { name: 'Test User' } }],
+      //posts: [{ title: 'Post 1', body: 'Test post', user: { name: 'Test User' } }],
+      posts: posts,
    });
 });
 module.exports = router;
