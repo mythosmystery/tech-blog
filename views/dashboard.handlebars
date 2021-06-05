@@ -8,3 +8,21 @@
       </ul>
    </div>
 </nav>
+<div class='container'>
+   <div class='row'>
+      {{#each posts as |post|}}
+         <div class='col s12'>
+            <div class='card blue-grey darken-1'>
+               <div class='card-content white-text'>
+                  <span class='card-title'>{{post.title}}</span>
+                  <p>{{post.body}}</p>
+               </div>
+               <div class='card-action'>
+                  <a href='/viewPost/{{post.id}}'>Leave a comment!</a>
+               </div>
+            </div>
+         </div>
+      {{/each}}
+   </div>
+   <a class='waves-effect waves-light btn' href='/addPost'>Add post</a>
+</div>
