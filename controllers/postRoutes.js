@@ -14,6 +14,10 @@ router.get('/view/:id', async (req, res) => {
 router.get('/add', withAuth, async (req, res) => {
    res.render('addPost');
 });
+router.get('/delete/:id', withAuth, async (req, res) => {
+   await Post.destroy({ where: { id: req.params.id, user_id: req.session.user_id } });
+   res.redirect('/dashboard');
+});
 
 router.post('/add', async (req, res) => {
    const postData = await Post.create({ ...req.body, user_id: req.session.user_id });
