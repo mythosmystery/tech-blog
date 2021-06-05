@@ -13,17 +13,18 @@
       <form class='col s12' action='/posts/update/{{id}}' method='post'>
          <div class='row'>
             <div class='input-field col s12'>
-               <input id='title' type='text' class='validate' name='title' />
-               <label for='title'>{{title}}</label>
+               <input id='title' type='text' class='validate' name='title' value='{{title}}' />
+               <label for='title'></label>
             </div>
          </div>
          <div class='row'>
             <div class='input-field col s12'>
-               <textarea id='body' name='body' class='materialize-textarea'></textarea>
-               <label for='body'>{{body}}</label>
+               <textarea id='body' name='body' class='materialize-textarea'>{{body}}</textarea>
+               <label for='body'></label>
             </div>
          </div>
          <button class='btn waves-effect waves-light' type='submit'>Update</button>
+         <a class='btn waves-effect waves-light' href='/posts/delete/{{id}}'>DELETE</a>
       </form>
    </div>
 </div>
