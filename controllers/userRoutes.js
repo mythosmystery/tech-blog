@@ -2,6 +2,7 @@ const e = require('express');
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const router = require('express').Router();
+
 router.post('/', async (req, res) => {
    try {
       const userData = await User.create(req.body);
@@ -42,3 +43,4 @@ router.post('/login', async (req, res) => {
       res.status(400).json(err);
    }
 });
+module.exports = router;

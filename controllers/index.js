@@ -9,6 +9,6 @@ router.use('/api', apiRoutes);
 router.use('/', homeRoutes);
 router.use('/users', userRoutes);
 router.use('/posts', postRoutes);
-router.use('/comments', commentroutes);
+router.use('/comments', commentRoutes);
 
 module.exports = router;
