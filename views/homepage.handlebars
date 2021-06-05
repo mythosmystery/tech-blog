@@ -24,6 +24,9 @@
                   <p>{{post.body}}</p>
                   <p>By {{post.user.username}}</p>
                </div>
+               <div class='card-action'>
+                  <a href='/viewPost/{{post.id}}'>Leave a comment!</a>
+               </div>
             </div>
          </div>
       {{/each}}

@@ -1,3 +1,4 @@
+const e = require('express');
 const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 const router = require('express').Router();
@@ -13,6 +14,13 @@ router.get('/', async (req, res) => {
 });
 router.get('/dashboard', withAuth, async (req, res) => {
    res.render('dashboard');
+});
+router.get('/viewPost/:id', async (req, res) => {
+   const postData = await Post.findByPk(req.params.id, {
+      include: [{ model: User }, { model: Comment, include: User }],
+   });
+   const post = postData.get({ plain: true });
+   res.render('viewPost', { ...post });
 });
 
 router.get('/signup', async (req, res) => {
@@ -32,6 +40,8 @@ router.get('/logout', async (req, res) => {
       req.session.destroy(() => {
          res.redirect('/');
       });
+   } else {
+      res.redirect('/');
    }
 });
 
