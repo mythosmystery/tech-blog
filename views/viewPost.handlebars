@@ -19,6 +19,7 @@
       <div class='col s12'>
          <div class='card blue-grey darken-1'>
             <div class='card-content white-text'>
+               <p class='right-align'>{{createdAt}}</p>
                <span class='card-title'>{{title}}</span>
                <p>{{body}}</p>
                <p>By {{user.username}}</p>
@@ -31,6 +32,7 @@
          <div class='col s12'>
             <div class='card blue-grey darken-1'>
                <div class='card-content white-text'>
+                  <p class='right-align'>{{comment.createdAt}}</p>
                   <span class='card-title'>{{comment.body}}</span>
                   <p>By {{comment.user.username}}</p>
                </div>
