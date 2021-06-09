@@ -1,5 +1,5 @@
 <nav>
-   <div class='nav-wrapper'>
+   <div class='nav-wrapper' style='background-color: #676E95'>
       <a href='/' class='brand-logo'>Tech Blog</a>
       <ul id='nav-mobile' class='right hide-on-med-and-down'>
          {{#if logged_in}}
@@ -17,7 +17,7 @@
 <div class='container'>
    <div class='row'>
       <div class='col s12'>
-         <div class='card blue-grey darken-1'>
+         <div class='card' style='background-color: #717CB470'>
             <div class='card-content white-text'>
                <p class='right-align'>{{createdAt}}</p>
                <span class='card-title'>{{title}}</span>
@@ -30,7 +30,7 @@
    {{#each comments as |comment|}}
       <div class='row'>
          <div class='col s12'>
-            <div class='card blue-grey darken-1'>
+            <div class='card' style='background-color: #717CB470'>
                <div class='card-content white-text'>
                   <p class='right-align'>{{comment.createdAt}}</p>
                   <span class='card-title'>{{comment.body}}</span>
@@ -43,7 +43,7 @@
    {{#if logged_in}}
       <div class='row'>
          <div class='col s12'>
-            <div class='card blue-grey darken-1'>
+            <div class='card' style='background-color: #717CB470'>
                <div class='card-content white-text'>
                   <form action='/comments/create/{{id}}' method='post'>
                      <div class='row'>
@@ -52,7 +52,7 @@
                            <label for='body'>Write your comment...</label>
                         </div>
                      </div>
-                     <button class='btn waves-effect waves-light' type='submit'>Post!</button>
+                     <button class='btn waves-effect waves-light' style='background-color: #676E95' type='submit'>Post!</button>
                   </form>
                </div>
             </div>
@@ -61,7 +61,7 @@
    {{else}}
       <div class='row'>
          <div class='col s12'>
-            <div class='card blue-grey darken-1'>
+            <div class='card' style='background-color: #717CB470'>
                <div class='card-content white-text'>
                   <form action='/login'>
                      <div class='row'>
@@ -70,7 +70,7 @@
                            <label for='comment'>Please login to comment</label>
                         </div>
                      </div>
-                     <button class='btn waves-effect waves-light' type='submit'>Login</button>
+                     <button class='btn waves-effect waves-light' style='background-color: #676E95' type='submit'>Login</button>
                   </form>
                </div>
             </div>
