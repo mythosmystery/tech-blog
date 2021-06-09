@@ -1,6 +1,6 @@
 <nav>
    <div class='nav-wrapper'>
-      <a href='#' class='brand-logo'>Tech Blog</a>
+      <a href='/' class='brand-logo'>Tech Blog</a>
       <ul id='nav-mobile' class='right hide-on-med-and-down'>
          {{#if logged_in}}
             <li><a href='/'>Home</a></li>
@@ -25,7 +25,7 @@
                   <p>By {{post.user.username}}</p>
                </div>
                <div class='card-action'>
-                  <a href='/posts/view/{{post.id}}'>Leave a comment!</a>
+                  <a href='/posts/view/{{post.id}}'>Comment</a>
                </div>
             </div>
          </div>

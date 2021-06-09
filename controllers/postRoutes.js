@@ -8,7 +8,7 @@ router.get('/view/:id', async (req, res) => {
       include: [{ model: User }, { model: Comment, include: User }],
    });
    const post = postData.get({ plain: true });
-   res.render('viewPost', { ...post });
+   res.render('viewPost', { ...post, logged_in: req.session.logged_in });
 });
 
 router.get('/add', withAuth, async (req, res) => {
@@ -31,7 +31,7 @@ router.post('/add', async (req, res) => {
 });
 
 router.post('/update/:id', async (req, res) => {
-   await Post.update(req.body, { where: { id: req.params.id } });
+   await Post.update(req.body, { where: { id: req.params.id, user_id: req.session.user_id } });
    res.redirect('/dashboard');
 });
 

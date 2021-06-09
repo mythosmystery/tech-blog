@@ -1,10 +1,16 @@
 <nav>
    <div class='nav-wrapper'>
-      <a href='#' class='brand-logo'>Tech Blog</a>
+      <a href='/' class='brand-logo'>Tech Blog</a>
       <ul id='nav-mobile' class='right hide-on-med-and-down'>
-         <li><a href='/'>Home</a></li>
-         <li><a href='/dashboard'>Dashboard</a></li>
-         <li><a href='/logout'>Logout</a></li>
+         {{#if logged_in}}
+            <li><a href='/'>Home</a></li>
+            <li><a href='/dashboard'>Dashboard</a></li>
+            <li><a href='/logout'>Logout</a></li>
+         {{else}}
+            <li><a href='/'>Home</a></li>
+            <li><a href='/dashboard'>Dashboard</a></li>
+            <li><a href='/login'>Login</a></li>
+         {{/if}}
       </ul>
    </div>
 </nav>
@@ -32,4 +38,41 @@
          </div>
       </div>
    {{/each}}
+   {{#if logged_in}}
+      <div class='row'>
+         <div class='col s12'>
+            <div class='card blue-grey darken-1'>
+               <div class='card-content white-text'>
+                  <form action='/comments/create/{{id}}' method='post'>
+                     <div class='row'>
+                        <div class='input-field col s12'>
+                           <textarea id='body' name='body' class='materialize-textarea'></textarea>
+                           <label for='body'>Write your comment...</label>
+                        </div>
+                     </div>
+                     <button class='btn waves-effect waves-light' type='submit'>Post!</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   {{else}}
+      <div class='row'>
+         <div class='col s12'>
+            <div class='card blue-grey darken-1'>
+               <div class='card-content white-text'>
+                  <form action='/login'>
+                     <div class='row'>
+                        <div class='input-field col s12'>
+                           <textarea disabled id='comment' name='comment' class='materialize-textarea'></textarea>
+                           <label for='comment'>Please login to comment</label>
+                        </div>
+                     </div>
+                     <button class='btn waves-effect waves-light' type='submit'>Login</button>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   {{/if}}
 </div>
