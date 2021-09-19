@@ -38,6 +38,10 @@ Lastly run `npm run seed` and you are seeded and ready to go.
 To use this site either navigate to my deployed URL or run `npm start` in your local repo folder, then launch a browser and go to `localhost:3001`
 Once at the site you will be able to use the intuitive user interface to create an account, create your first blog post, and comment on other users' posts.
 
+## Screenshots
+
+![](Assets/tech-blog.png)
+
 ## Configuring
 
 No configuration necessary
